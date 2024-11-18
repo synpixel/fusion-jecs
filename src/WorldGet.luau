@@ -13,13 +13,13 @@ type WorldGet =
 	& (<A, B, C>(scope: WorldScope, id: Entity, a: Entity<A>, b: Entity<B>, c: Entity<C>) -> (StateObject<A?>, StateObject<B?>, StateObject<C?>))
     & (<A, B, C, D>(scope: WorldScope, id: Entity, a: Entity<A>, b: Entity<B>, c: Entity<C>, d: Entity<D>) -> (StateObject<A?>, StateObject<B?>, StateObject<C?>, StateObject<D?>))
 
-local function get<T>(scope: WorldScope, id: number, component: Entity<T>): StateObject<T>
+local function get<T>(scope: WorldScope, id: Entity, component: Entity<T>): StateObject<T>
 	return runtime.everyFrame(scope, function()
 		return scope.World:get(id, component)
 	end)
 end
 
-local function WorldGet(scope: WorldScope, id: number, a: Entity, b: Entity?, c: Entity?, d: Entity?, e: Entity?)
+local function WorldGet(scope: WorldScope, id: Entity, a: Entity, b: Entity?, c: Entity?, d: Entity?, e: Entity?)
 	local first = get(scope, id, a)
 
 	if b == nil then
