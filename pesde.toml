@@ -4,6 +4,7 @@ description = "A library which bridges the gap between your ECS and your UI"
 authors = ["synpixel"]
 repository = "https://github.com/synpixel/fusion-jecs"
 license = "MIT"
+includes = ["pesde.toml", "LICENSE", "README.md", "src"]
 
 [target]
 environment = "roblox"
