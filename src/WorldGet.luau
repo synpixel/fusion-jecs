@@ -8,10 +8,10 @@ type WorldScope = fusionTypes.Scope<fusionTypes.Fusion & { World: jecsTypes.Worl
 
 -- stylua: ignore
 type WorldGet =
-	& (<A>(scope: WorldScope, id: Entity, a: Entity<A>) -> StateObject<A>)
-	& (<A, B>(scope: WorldScope, id: Entity, a: Entity<A>, b: Entity<B>) -> (StateObject<A>, StateObject<B>))
-	& (<A, B, C>(scope: WorldScope, id: Entity, a: Entity<A>, b: Entity<B>, c: Entity<C>) -> (StateObject<A>, StateObject<B>, StateObject<C>))
-    & (<A, B, C, D>(scope: WorldScope, id: Entity, a: Entity<A>, b: Entity<B>, c: Entity<C>, d: Entity<D>) -> (StateObject<A>, StateObject<B>, StateObject<C>, StateObject<D>))
+	& (<A>(scope: WorldScope, id: Entity, a: Entity<A>) -> StateObject<A?>)
+	& (<A, B>(scope: WorldScope, id: Entity, a: Entity<A>, b: Entity<B>) -> (StateObject<A?>, StateObject<B?>))
+	& (<A, B, C>(scope: WorldScope, id: Entity, a: Entity<A>, b: Entity<B>, c: Entity<C>) -> (StateObject<A?>, StateObject<B?>, StateObject<C?>))
+    & (<A, B, C, D>(scope: WorldScope, id: Entity, a: Entity<A>, b: Entity<B>, c: Entity<C>, d: Entity<D>) -> (StateObject<A?>, StateObject<B?>, StateObject<C?>, StateObject<D?>))
 
 local function get<T>(scope: WorldScope, id: number, component: Entity<T>): StateObject<T>
 	return runtime.everyFrame(scope, function()
