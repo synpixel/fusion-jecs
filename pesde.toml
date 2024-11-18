@@ -1,5 +1,6 @@
 name = "synpixel/fusion_jecs"
 version = "0.1.0"
+description = "A library which bridges the gap between your ECS and your UI"
 authors = ["synpixel"]
 repository = "https://github.com/synpixel/fusion-jecs"
 license = "MIT"
